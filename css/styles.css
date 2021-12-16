@@ -965,9 +965,7 @@
     height: 120px;
 }
 
-.position-person {
-    position: relative;
-}
+
 .icon-person {
     position: absolute;
     top: 50%;
