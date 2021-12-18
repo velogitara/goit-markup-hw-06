@@ -925,12 +925,22 @@
     color: var(--primary-text-color);
 }
 
-.form-field {
+/* .form-field {
     margin-top: 10px;
 }
 
 .form-field:not(:last-child) {
     margin-bottom: 4px;
+} */
+.name-comment {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.16;
+
+    letter-spacing: 0.01em;
+
+    color: var(--secondary-text-color);
 }
 .form-field.comment {
     font-style: normal;
@@ -941,23 +951,29 @@
 
     letter-spacing: 0.03em;
 
-    color: #757575;
+    color: var(--secondary-text-color);
 }
 .link-condition {
     color: var(--active-color);
     text-decoration: underline;
 }
 
-.form .form-input {
+.form-window .form-input {
     border-color: rgba(33, 33, 33, 0.2);
 
     border-radius: 4px;
+    height: 40px;
+    width: 100%;
+
+    transition: border-color 250ms var(--cubic);
 }
-.form .form-input:hover,
-.feedback:hover {
+.form .form-input:hover {
     border-color: var(--active-color);
 }
 
+.feedback:hover {
+    border-color: var(--active-color);
+}
 .form textarea {
     resize: none;
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -965,9 +981,55 @@
     height: 120px;
 }
 
+.input {
+    position: relative;
+    margin-top: 30px;
+}
+.name-label {
+    position: absolute;
+    top: 55%;
+    left: 35px;
 
-/* .icon-person {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.16px;
+
+    letter-spacing: 0.01em;
+
+    color: var(--secondary-text-color);
+
+    transition: color 250ms var(--cubic), transform 250ms var(--cubic);
+}
+
+.form-input:focus + .name-label,
+.form-input:not(:placeholder-shown) + .name-label {
+    transform: translate(-30px, -35px);
+}
+.icon-person {
     position: absolute;
     top: 50%;
-    left: 50%;
-} */
+    left: 12px;
+    transform: translateY(-50%);
+}
+.icon-person-svg {
+    fill: #212121;
+
+    transition: fill 250ms var(--cubic);
+}
+
+.input:hover .icon-person-svg,
+.input:hover .name-label {
+    color: var(--active-color);
+    fill: var(--active-color);
+}
+
+.icon-person:hover + .form-input {
+    border-color: var(--active-color);
+}
+
+.feedback-div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
