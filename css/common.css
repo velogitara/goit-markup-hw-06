@@ -22,6 +22,7 @@ html {
     --card-set-gap: 30px;
     --icon-silent-color: #afb1b8;
     --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+    --btn-shadow-color: #188ce8;
 }
 
 body {

@@ -215,13 +215,16 @@
     line-height: 1.875;
     letter-spacing: 0.06em;
 
-    transition: background-color 250ms var(--cubic);
+    transition: background-color 250ms var(--cubic), transform 250ms var(--cubic);
+    transform-style: preserve-3d;
 }
 .btn:hover,
-.btn:focus,
-.btn:active {
+.btn:focus {
     background: #188ce8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+.btn:active {
+    transform: translateY(0.05rem);
 }
 
 /* ================================ Что мы делаем =========================== */
@@ -401,11 +404,15 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    transition: background-color 250ms var(--cubic);
+    transition: background-color 250ms var(--cubic), transform 250ms var(--cubic);
 }
 .social-links:hover,
 .social-links:focus {
     background-color: var(--active-color);
+}
+
+.social-links:active {
+    transform: scale(0.95);
 }
 
 .icon {
@@ -458,7 +465,7 @@
     border: 1px solid #afb1b8;
     border-radius: 4px;
 
-    transition: border-color 250ms var(--cubic);
+    transition: border-color 250ms var(--cubic), transform 250ms var(--cubic);
 }
 
 .clients-links-svg {
@@ -473,6 +480,9 @@
 .clients-links:hover .clients-links-svg,
 .clients-links:focus .clients-links-svg {
     fill: var(--active-color);
+}
+.clients-links:active .clients-links-svg {
+    transform: scale(0.95);
 }
 
 /* .clients-links.icon-first {
@@ -595,7 +605,7 @@
     height: 44px;
     border-radius: 50%;
 
-    transition: background-color 250ms var(--cubic);
+    transition: background-color 250ms var(--cubic), transform 250ms var(--cubic);
 }
 
 .icon-footer {
@@ -613,6 +623,10 @@
 .footer-section-links:focus > .icon-footer {
     fill: var(--white-color);
 }
+.footer-section-links:active {
+    transform: scale(0.95);
+}
+
 /* .footer-section-links.insta {
     background-image: url('../images/instagram-footer.svg');
 }
@@ -704,13 +718,19 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 1.25;
-
     letter-spacing: 0.03em;
+
+    caret-color: var(--white-color);
 }
 
 .subscribe-input:hover,
 .subscribe-input:focus {
     box-shadow: 0px 4px 4px rgb(255 255 255 / 15%);
+}
+
+input[type='text']::placeholder {
+    color: var(--white-color);
+    opacity: 0.9;
 }
 /* ======================footer section ends====================== */
 
@@ -901,7 +921,6 @@
     left: 50%;
 
     width: 528px;
-    height: 581px;
 
     background-color: var(--white-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -940,11 +959,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px;
+    /* padding: 40px; */
 }
 .form {
     display: flex;
     flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .form > h2 {
@@ -952,7 +973,6 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 1.15;
-
     letter-spacing: 0.03em;
 
     color: var(--primary-text-color);
@@ -976,6 +996,7 @@
     color: var(--secondary-text-color);
 }
 .form-field.comment {
+    margin-top: 20px;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -1064,7 +1085,6 @@
 .feedback-div {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 
 .input:focus-within .icon-modal-svg {
@@ -1077,4 +1097,57 @@
 
 .form-input:not(:placeholder-shown) + .name-label {
     transform: translate(-30px, -35px);
+}
+
+.modal-btn-send-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.send-mdl-btn {
+    padding: 10px 55px;
+    border: none;
+    background-color: var(--active-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    color: var(--white-color);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.875;
+    letter-spacing: 0.06em;
+
+    transition: background-color 250ms var(--cubic), translate 250ms var(--cubic);
+    transform-style: preserve-3d;
+}
+
+/* .send-mdl-btn::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--active-color);
+    border-radius: inherit;
+    box-shadow: 0 0.625em 0 0 #beadfc49;
+    transform: translate3d(0, 0.25em, -1em);
+    transition: transform 0.15s, box-shadow 0.15s;
+} */
+
+.send-mdl-btn:hover {
+    background-color: var(--btn-shadow-color);
+}
+
+.send-mdl-btn:focus {
+    background-color: var(--btn-shadow-color);
+}
+.send-mdl-btn:active {
+    background-color: var(--btn-shadow-color);
+    transform: translate(0, 0.05em);
 }
