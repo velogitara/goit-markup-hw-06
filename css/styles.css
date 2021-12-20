@@ -663,12 +663,17 @@
 
     overflow: hidden;
 
-    transition: background-color 250ms var(--cubic), box-shadow 250ms var(--cubic);
+    transition: background-color 250ms var(--cubic), box-shadow 250ms var(--cubic),
+        transform 250ms var(--cubic);
 }
 .button-subscribe:hover,
 .button-subscribe:active {
-    background: #188ce8;
+    background: var(--btn-shadow-color);
     box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.15);
+}
+
+.button-subscribe:active {
+    transform: scale(0.99);
 }
 
 .icon-send {
@@ -1007,9 +1012,55 @@ input[type='text']::placeholder {
 
     color: var(--secondary-text-color);
 }
+.comment {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.comment-checkbox {
+    /* appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none; */
+    border: none;
+
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.checkbox-icon {
+    display: inline-block;
+    margin-right: 7px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #212121;
+    border-radius: 4px;
+    transition: background-color 250ms var(--cubic), border-color 250ms var(--cubic);
+}
+
+.comment-checkbox:checked + .checkbox-icon {
+    border-color: var(--active-color);
+    background-color: var(--active-color);
+    /* background-image: url(../images/check-box.svg);
+    background-origin: border-box;
+    background-size: contain;
+*/
+}
+
 .link-condition {
     color: var(--active-color);
     text-decoration: underline;
+    margin-left: 3px;
 }
 
 .form-window .form-input {
@@ -1019,6 +1070,8 @@ input[type='text']::placeholder {
     height: 40px;
     width: 100%;
 
+    font-family: inherit;
+
     transition: border-color 250ms var(--cubic);
 }
 .form .form-input:hover,
@@ -1026,6 +1079,9 @@ input[type='text']::placeholder {
     border-color: var(--active-color);
 }
 
+.feedback {
+    font-family: inherit;
+}
 .feedback:hover,
 .feedback:focus {
     border-color: var(--active-color);
