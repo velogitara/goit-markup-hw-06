@@ -967,11 +967,13 @@
 
     transition: border-color 250ms var(--cubic);
 }
-.form .form-input:hover {
+.form .form-input:hover,
+.form .form-input:focus {
     border-color: var(--active-color);
 }
 
-.feedback:hover {
+.feedback:hover,
+.feedback:focus {
     border-color: var(--active-color);
 }
 .form textarea {
@@ -984,6 +986,10 @@
 .input {
     position: relative;
     margin-top: 30px;
+}
+
+.form-input {
+    padding-left: 35px;
 }
 .name-label {
     position: absolute;
@@ -1002,34 +1008,40 @@
     transition: color 250ms var(--cubic), transform 250ms var(--cubic);
 }
 
-.form-input:focus + .name-label,
-.form-input:not(:placeholder-shown) + .name-label {
-    transform: translate(-30px, -35px);
-}
-.icon-person {
+.icon-modal {
     position: absolute;
     top: 50%;
     left: 12px;
     transform: translateY(-50%);
 }
-.icon-person-svg {
+.icon-modal-svg {
     fill: #212121;
 
     transition: fill 250ms var(--cubic);
 }
 
-.input:hover .icon-person-svg,
-.input:hover .name-label {
-    color: var(--active-color);
+/* .form-input:focus + .name-label,
+.form-input:not(:placeholder-shown) + .name-label {
+    transform: translate(-30px, -35px);
+}
+.form-input:focus ~ .icon-modal .icon-modal-svg {
     fill: var(--active-color);
-}
-
-.icon-person:hover + .form-input {
-    border-color: var(--active-color);
-}
+} */
 
 .feedback-div {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+}
+
+.input:focus-within .icon-modal-svg {
+    fill: var(--active-color);
+}
+
+.input:focus-within .name-label {
+    transform: translate(-30px, -35px);
+}
+
+.form-input:not(:placeholder-shown) + .name-label {
+    transform: translate(-30px, -35px);
 }
