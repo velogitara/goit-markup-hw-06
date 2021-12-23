@@ -576,6 +576,7 @@
 }
 .footer-section-container {
     display: flex;
+    justify-content: space-between;
     align-items: baseline;
 }
 .footer-sotial-links {
@@ -657,7 +658,8 @@
 
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 16px;
+
+    font-size: 12px;
     line-height: 1.875;
     letter-spacing: 0.06em;
 
@@ -701,7 +703,7 @@
 }
 
 .connect-subscribe {
-    margin-left: 39px;
+    margin-left: 93px;
 }
 
 .subscribe-div {
@@ -1013,6 +1015,7 @@ input[type='text']::placeholder {
     color: var(--secondary-text-color);
 }
 .comment {
+    justify-content: center;
     display: inline-flex;
     align-items: center;
     position: relative;
@@ -1080,7 +1083,16 @@ input[type='text']::placeholder {
 }
 
 .feedback {
-    font-family: inherit;
+    padding-top: 12px;
+    padding-left: 16px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+
+    color: rgba(117, 117, 117, 0.5);
 }
 .feedback:hover,
 .feedback:focus {
